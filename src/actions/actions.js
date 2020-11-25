@@ -1,4 +1,4 @@
-import {GET_EMPLOYEES} from "./actions-type";
+import {GET_BIRTHDAY, GET_EMPLOYEES} from "./actions-type";
 
 export const getEmployeesAction=(employees)=>{
 return (
@@ -7,4 +7,12 @@ return (
         payload: employees
     }
 )
+};
+export const getBirthdayAction=(list)=>{
+    return(
+        {
+            type: GET_BIRTHDAY,
+            payload: list
+        }
+    )
 };
