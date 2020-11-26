@@ -10,8 +10,5 @@ export const string = {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
-    // month: 'short',
-
-
 };
 

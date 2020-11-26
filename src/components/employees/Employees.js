@@ -9,9 +9,7 @@ import {birthdaySelector, letterArraySelector} from "../../store/selectors";
 export const Employees = () => {
     const dispatch = useDispatch();
     const birthday = useSelector(birthdaySelector);
-
     const list = useSelector(letterArraySelector);
-
     const getEmployees = useCallback(async () => {
         try {
             const request = await fetch('https://yalantis-react-school-api.yalantis.com/api/task0/users');
@@ -24,16 +22,12 @@ export const Employees = () => {
 
     const select = (event, employee) => {
         const copyBirthday = birthday.slice();
-        // console.log(employee);
-        // console.log(event.target.checked);
-        // event.target.checked={true};
         if (event.target.checked === true) {
             copyBirthday.push(employee);
             dispatch(getBirthdayAction(copyBirthday));
 
         } else {
             const unchecked = copyBirthday.filter(value => value.id !== employee.id);
-            // console.log(unchecked);
             dispatch(getBirthdayAction(unchecked));
         }
     };
@@ -63,7 +57,6 @@ export const Employees = () => {
                                 }</div>
                             }
                         </div>
-
                     }</div>)
                 })}
             </div>
